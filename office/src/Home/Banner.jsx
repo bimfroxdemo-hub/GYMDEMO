@@ -8,7 +8,7 @@ const Banner = () => {
       <img
         src="/bg2.png"
         alt="banner"
-        className="w-full object-cover h-[calc(100vh-180px)] sm:h-[calc(80vh-150px)] md:h-screen"
+        className="w-full object-cover h-[calc(100vh-230px)] sm:h-[calc(100vh-140px)] md:h-screen"
         // h-[calc(100vh-30px)] subtracts 15px top + 15px bottom
       />
 
