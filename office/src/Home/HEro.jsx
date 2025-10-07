@@ -1,11 +1,15 @@
-import React from 'react'
-
+import React from 'react';
+import Banner from './Banner';
+import WhyChhose from './WhyChhose';
 const Hero = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+    <section>
+      <Banner />
+       <WhyChhose/>
+    </section>
+    </>
+  );
+};
 
-export default Hero
+export default Hero;
