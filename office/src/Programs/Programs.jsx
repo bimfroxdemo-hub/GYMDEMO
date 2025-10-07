@@ -52,7 +52,7 @@ const programs = [
 
 const Programs = () => {
 
-  const whatsappNumber = "9722142610"
+  const whatsappNumber = "916353771878"
 
   const handleprogramClick = (programname) => {
     window.open(
