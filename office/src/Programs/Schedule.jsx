@@ -13,7 +13,7 @@ const schedule = [
 
 const Schedule = () => {
   return (
-    <section className='py-16 px-4 bg-gray-50'>
+    <section className='py-15 px-4 bg-gray-50'>
         <div className='max-w-6xl mx-auto'>
 
             {/* WEEKLY SECTION */}

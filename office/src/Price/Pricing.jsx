@@ -2,9 +2,16 @@ import React from 'react'
 
 const Pricing = () => {
   return (
-    <div>
+    <section className=''>
+      <div className="">
+
+        {/* HEADER */}
+        <div className="">
+
+        </div>
+      </div>
       
-    </div>
+    </section>
   )
 }
 
