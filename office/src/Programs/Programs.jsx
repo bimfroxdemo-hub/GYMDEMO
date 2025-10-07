@@ -1,8 +1,11 @@
 import React from 'react'
-import { FaDumbbell,FaRegCommentDots } from "react-icons/fa6";
+import { FaDumbbell} from "react-icons/fa6";
+import { IoLogoWhatsapp } from "react-icons/io";
+
 import { BiCycling } from "react-icons/bi";
 import { GrYoga } from "react-icons/gr";
-import { GiMeditation, GiMusicalNotes, GiSoundWaves, GiWeightLiftingUp, GiStrongMan, GiMuscleUp, GiFruitBowl, GiMeal, GiHerbsBundle  } from "react-icons/gi";
+import { GiMusicalNotes, GiWeightLiftingUp, GiFruitBowl} from "react-icons/gi";
+import Schedule from './Schedule';
 
 
 // import { FaMusic, FaHeartbeat, FaRunning, FaPlayCircle } from "react-icons/fa";
@@ -48,6 +51,14 @@ const programs = [
 ]
 
 const Programs = () => {
+
+  const whatsappNumber = "9722142610"
+
+  const handleprogramClick = (programname) => {
+    window.open(
+    `https://wa.me/${whatsappNumber}?text=Hi! I'm interested in learning more about ${programname}`,"_blank"
+    );
+  }
   return (
     <section className='py-20 px-4 bg-gray-50'>
       <div className='container mx-auto max-w-6xl'>
@@ -64,20 +75,24 @@ const Programs = () => {
         <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-7 '>
           {programs.map((program,index) => (
             <div 
-            key={index} 
-            className='bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:border-green-300 hover:shadow-xl hover:shadow-green-300 transition-all duration-300 group'>
+              key={index} 
+              className='bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:border-green-300 hover:shadow-xl hover:shadow-green-300 transition-all duration-300 group'>
               <program.icon 
               className={`w-16 h-16 ${program.color} mb-6 group-hover:scale-100`} />
               <h3 className='text-2xl font-semibold mb-4'>{program.title}</h3>
               <p className='text-gray-800 mb-6'>{program.description}</p>
 
-              <button className='w-full flex items-center justify-center gap-2 py-3 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:border-green-300 hover:text-green-600 transition-all duration-300'>
-                <FaRegCommentDots className='w-5 h-5'/>
-                ASK ABOUT THIS PROGRAM
-              </button>
-            </div>
+                <button 
+                  className='w-full flex items-center justify-center gap-3 py-3 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:border-green-300 hover:text-green-600 transition-all duration-300'
+                  onClick={() => handleprogramClick(program.title)}
+                  >
+                  <IoLogoWhatsapp className='text-green-500 w-7 h-7 sm:w-5 sm:h-5 flex-shrink-0' />
+                  <span className='flex-1 text-center'>ASK ABOUT THIS PROGRAM</span>
+                </button>
+              </div>
           ))}
         </div>
+        <Schedule />
       </div>
     </section>
   )
