@@ -1,10 +1,85 @@
 import React from 'react'
+import { FaDumbbell,FaRegCommentDots } from "react-icons/fa6";
+import { BiCycling } from "react-icons/bi";
+import { GrYoga } from "react-icons/gr";
+import { GiMeditation, GiMusicalNotes, GiSoundWaves, GiWeightLiftingUp, GiStrongMan, GiMuscleUp, GiFruitBowl, GiMeal, GiHerbsBundle  } from "react-icons/gi";
+
+
+// import { FaMusic, FaHeartbeat, FaRunning, FaPlayCircle } from "react-icons/fa";
+
+
+const programs = [
+  {
+    icon: FaDumbbell,
+    title: "Weight Training",
+    color: "text-green-500",
+    description: "Build strength and muscle with our comprehensive weightlifting programs and expert guidance."
+  },
+  {
+    icon: BiCycling,
+    title: "Cardio",
+    color: "text-green-500",
+    description:"Boost your cardiovascular health with treadmills, bikes, and high-energy cardio sessions."
+  },
+    {
+    icon: GrYoga,
+    title: "Yoga",
+    color: "text-green-500",
+    description:"Find balance and flexibility through our calming yoga classes for all experience levels."
+  },
+    {
+    icon: GiMusicalNotes,
+    title: "Zumba",
+    color: "text-green-500",
+    description:"Dance your way to fitness with our high-energy Zumba classes that make working out fun."
+  },
+    {
+    icon: GiWeightLiftingUp,
+    title: "CrossFit",
+    color: "text-green-500",
+    description:"Push your limits with intense CrossFit workouts designed to build strength and endurance."
+  },
+    {
+    icon: GiFruitBowl,
+    title: "Nutrition Coaching",
+    color: "text-green-500",
+    description:"Optimize your results with personalized nutrition plans tailored to your fitness goals."
+  }
+]
 
 const Programs = () => {
   return (
-    <div>
-      
-    </div>
+    <section className='py-20 px-4 bg-gray-50'>
+      <div className='container mx-auto max-w-6xl'>
+
+        {/* Header */}
+        <div className='text-center mb-15'>
+          <h2 className='text-4xl md:text-6xl font-extrabold mb-6'>OUR <span className='text-green-500'>PROGRAMS</span></h2>
+          <div className="w-20 h-1 bg-green-500 mx-auto mb-6"></div>
+          <p className='text-lg text-gray-600 md:text-xl max-w-3xl mx-auto'>Choose from our diverse range of fitness programs designed to meet your unique goals</p>
+        </div>
+
+        {/* Program Cards */}
+
+        <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-7 '>
+          {programs.map((program,index) => (
+            <div 
+            key={index} 
+            className='bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:border-green-300 hover:shadow-xl hover:shadow-green-300 transition-all duration-300 group'>
+              <program.icon 
+              className={`w-16 h-16 ${program.color} mb-6 group-hover:scale-100`} />
+              <h3 className='text-2xl font-semibold mb-4'>{program.title}</h3>
+              <p className='text-gray-800 mb-6'>{program.description}</p>
+
+              <button className='w-full flex items-center justify-center gap-2 py-3 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:border-green-300 hover:text-green-600 transition-all duration-300'>
+                <FaRegCommentDots className='w-5 h-5'/>
+                ASK ABOUT THIS PROGRAM
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 
