@@ -1,10 +1,14 @@
 import React from 'react';
-import Hero from './Hero';
+import Banner from './Banner';
+import WhyChoose from './WhyChhose';
 
 const Home = () => {
   return (
     <>
-      <Hero/>
+      <section>
+      < Banner/>
+       <WhyChoose/>
+    </section>
     </>
   );
 };
