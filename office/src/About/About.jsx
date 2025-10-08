@@ -51,7 +51,10 @@ const About = () => {
               <img
                 src={item.URL}
                 alt={item.title}
-                className="w-full h-64 sm:h-72 md:h-80 object-cover rounded-t-2xl relative z-10"
+                className="w-full h-64 sm:h-72 md:h-80 object-cover rounded-t-2xl relative z-10 
+                           transform transition-transform duration-500 ease-in-out 
+                           group-hover:scale-105 group-hover:translate-y-1
+                           animate-float"
               />
             )}
             <div className="p-6 relative z-10">
@@ -75,6 +78,20 @@ const About = () => {
           <Card />
         </div>
       </div>
+
+      {/* Floating animation CSS */}
+      <style>
+        {`
+          @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+          }
+          .animate-float {
+            animation: float 3s ease-in-out infinite;
+          }
+        `}
+      </style>
     </div>
   );
 };
