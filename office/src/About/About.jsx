@@ -42,16 +42,19 @@ const About = () => {
         {idd.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-2xl border-2 border-black shadow-lg overflow-hidden flex flex-col items-center text-center transition-transform hover:scale-105 hover:shadow-xl"
+            className="relative group rounded-2xl overflow-hidden flex flex-col items-center text-center border border-gray-200 shadow-sm transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-green-300"
           >
+            {/* Soft Glow on Hover */}
+            <div className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-green-200/40 via-green-200/30 to-green-200/40 blur-3xl"></div>
+
             {item.URL && (
               <img
                 src={item.URL}
                 alt={item.title}
-                className="w-full h-64 sm:h-72 md:h-80 object-cover rounded-t-2xl"
+                className="w-full h-64 sm:h-72 md:h-80 object-cover rounded-t-2xl relative z-10"
               />
             )}
-            <div className="p-6">
+            <div className="p-6 relative z-10">
               <h2 className="text-2xl sm:text-3xl font-bold text-green-500 mb-2">{item.title}</h2>
               {item.desc && <p className="text-gray-600 text-sm sm:text-base">{item.desc}</p>}
             </div>

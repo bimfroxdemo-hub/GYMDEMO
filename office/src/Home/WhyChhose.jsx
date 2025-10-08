@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { GoPeople } from "react-icons/go";
 import { IoMdTime } from "react-icons/io";
 import { GoTrophy } from "react-icons/go";
@@ -25,7 +25,7 @@ const WhyChoose = () => {
 
   return (
     <div className="py-20 px-6 bg-gray-100">
-      {/* WHY CHOOSE FITCORE */}
+      {/* WHY CHOOSE GYM WALA */}
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-16">
         WHY CHOOSE Gym <span className="text-green-500"> Wala</span>
       </h1>
@@ -35,11 +35,17 @@ const WhyChoose = () => {
         {cards.map((card) => (
           <div
             key={card.id}
-            onClick={() => setActiveCard(card.id === activeCard ? null : card.id)} // toggle green shadow on click
-            className={`bg-white p-8 rounded-2xl flex flex-col items-center text-center transition-transform duration-300 cursor-pointer
-              ${activeCard === card.id ? "scale-105 shadow-[0_0_25px_rgba(34,197,94,0.5)]" : "hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.5)]"}`}
+            onClick={() => setActiveCard(card.id === activeCard ? null : card.id)}
+            className={`relative group rounded-2xl overflow-hidden flex flex-col items-center text-center border border-gray-200 p-8 transform transition-all duration-300 cursor-pointer
+              hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-400
+              ${activeCard === card.id ? "-translate-y-2 shadow-2xl shadow-green-400" : ""}`}
           >
-            <div className="mb-4">{card.icon}</div>
+            {/* Soft Green Glow */}
+            <div className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-green-200/40 via-green-200/30 to-green-200/40 blur-3xl"></div>
+
+            <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110">
+              {card.icon}
+            </div>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-3">{card.title}</h2>
             <p className="text-gray-600 text-sm md:text-base">{card.desc}</p>
           </div>
@@ -61,10 +67,14 @@ const WhyChoose = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              onClick={() => setActiveReview(review.id === activeReview ? null : review.id)} // toggle green shadow on click
-              className={`bg-white p-6 rounded-2xl flex flex-col items-center text-center transition-transform duration-300 cursor-pointer
-                ${activeReview === review.id ? "scale-105 shadow-[0_0_25px_rgba(34,197,94,0.5)]" : "hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.5)]"}`}
+              onClick={() => setActiveReview(review.id === activeReview ? null : review.id)}
+              className={`relative group rounded-2xl overflow-hidden flex flex-col items-center text-center border border-gray-200 p-6 transform transition-all duration-300 cursor-pointer
+                hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-400
+                ${activeReview === review.id ? "-translate-y-2 shadow-2xl shadow-green-400" : ""}`}
             >
+              {/* Soft Green Glow */}
+              <div className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500bg-gradient-to-r from-green-200/40 via-green-200/30 to-green-200/40 blur-2xl"></div>
+
               <div className="flex mb-2">
                 {[...Array(5)].map((_, index) => (
                   <FaStar key={index} className="text-yellow-400 mx-0.5" />
@@ -77,9 +87,7 @@ const WhyChoose = () => {
         </div>
       </div>
 
-      <div  >
-  <hr className=' mt-25' />
-      </div>
+      <hr className="mt-25" />
     </div>
   );
 };

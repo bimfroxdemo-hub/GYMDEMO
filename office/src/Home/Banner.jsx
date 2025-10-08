@@ -26,7 +26,7 @@ const Banner = () => {
           Transform your body, elevate your mind, and unleash
         </p>
         <p className="text-[18px] sm:text-[22px] md:text-[30px] text-white drop-shadow-md mb-8">
-          your potential at FitCore Gym
+          your potential at Gym <span className="text-green-500">Wala</span>
         </p>
 
         {/* ✅ Center WhatsApp Button */}

@@ -47,39 +47,16 @@ const Card = () => {
 
   return (
     <div className="py-10 px-4 sm:px-6 lg:px-20 bg-gray-50">
-      {/* Inline CSS for pop/bounce effect */}
-      <style>
-        {`
-          .pop-hover {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-          }
-          .pop-hover:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 25px -5px rgba(34,197,94,0.2), 0 10px 10px -5px rgba(34,197,94,0.1);
-            border-color: #22c55e; /* Tailwind green-500 */
-          }
-
-          @keyframes icon-pop {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-            70% { transform: scale(1.15); }
-            100% { transform: scale(1.25); }
-          }
-
-          .icon-pop-hover:hover {
-            animation: icon-pop 0.4s ease forwards;
-          }
-        `}
-      </style>
-
-      {/* Responsive Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {cardd.map((item) => (
           <div
             key={item.id}
-            className="pop-hover bg-white border-1 shadow-lg border-gray-100 rounded-3xl p-8 flex flex-col items-center text-center hover:border-green-100 hover:shadow-xl hover:shadow-green-300 transition-all duration-300"
+            className="relative group rounded-3xl overflow-hidden flex flex-col items-center text-center border border-gray-200 shadow-md p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-400"
           >
-            <div className="text-green-500 mb-4 icon-pop-hover">
+            {/* Soft Glow on Hover */}
+            <div className="absolute inset-0 -z-10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-green-200/40 via-green-200/30 to-green-200/40 blur-3xl"></div>
+
+            <div className="text-green-500 mb-4 transform transition-transform duration-300 group-hover:scale-110">
               {item.icon}
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-green-500 mb-3">
