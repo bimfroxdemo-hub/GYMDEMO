@@ -11,7 +11,7 @@ const trainers = [
     name: "SHAAN PATEL",
     expertise: "Strength & Conditioning",
     image: shaan,
-    bio: "10+ years of experience in bodybuilding and strength training",
+    bio: "10+ years of experience in bodybuilding and strength and training",
   },
   {
     name: "BABLI PARIHAR",
