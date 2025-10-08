@@ -8,7 +8,7 @@ const faqs = [
       "Yes! All our memberships are flexible. Monthly plans can be cancelled with 30 days notice. Quarterly and yearly plans can be paused or cancelled with pro-rated refunds.",
   },
   {
-    question: "Do you offer personal training?",
+    question: "Do you offer personal training in gym?",
     answer:
       "Absolutely! We have certified personal trainers available for one-on-one sessions. Quarterly and yearly memberships include complimentary PT sessions, or you can purchase individual sessions.",
   },
