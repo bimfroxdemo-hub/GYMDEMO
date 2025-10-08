@@ -6,7 +6,7 @@ import About from "./About/About";
 import Programs from "./Programs/Programs";
 import Trainer from "./Trainer/Trainer";
 import Pricing from "./Price/Pricing";
-import Contect from "./Contect/Contect";
+import Contact from "./Contact/Contact";
 import Footer from "./Footer/Footer";
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/programs" element={<Programs />} />
           <Route path="/trainer" element={<Trainer />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/contect" element={<Contect />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
 

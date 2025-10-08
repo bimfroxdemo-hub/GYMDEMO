@@ -63,18 +63,6 @@ const Programs = () => {
 
   return (
     <section className="py-20 px-4 bg-gray-50">
-      {/* Custom CSS animation */}
-      <style>
-        {`
-          .icon-container {
-            transition: transform 0.3s ease-in-out;
-          }
-          .icon-container:hover {
-            transform: scale(1.25);
-          }
-        `}
-      </style>
-
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
@@ -83,8 +71,7 @@ const Programs = () => {
           </h2>
           <div className="w-20 h-1 bg-green-500 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 md:text-xl max-w-3xl mx-auto">
-            Choose from our diverse range of fitness programs designed to meet
-            your unique goals
+            Choose from our diverse range of fitness programs designed to meet your unique goals
           </p>
         </div>
 
@@ -93,29 +80,28 @@ const Programs = () => {
           {programs.map((program, index) => (
             <div
               key={index}
-              className="group bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:border-green-300 hover:shadow-xl hover:shadow-green-300 transition-all duration-300 text-center"
+              className="relative group bg-white p-8 rounded-xl shadow-md border border-gray-200 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-400 text-center"
             >
+              {/* Soft Green Glow */}
+              <div className="absolute inset-0 -z-10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-green-200/40 via-green-200/30 to-green-200/40 blur-3xl"></div>
+
               {/* Animated Icon */}
               <div className="flex justify-center mb-6">
                 <program.icon
-                  className={`w-16 h-16 ${program.color} icon-container`}
+                  className={`w-16 h-16 ${program.color} transform transition-transform duration-300 group-hover:scale-110`}
                 />
               </div>
 
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                {program.title}
-              </h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">{program.title}</h3>
               <p className="text-gray-700 mb-6">{program.description}</p>
 
-              {/* WhatsApp Button */}
+              {/* WhatsApp Button with Glow */}
               <button
                 onClick={() => handleProgramClick(program.title)}
-                className="w-full flex items-center justify-center gap-3 py-3 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-green-50 hover:border-green-300 hover:text-green-600 transition-all duration-300"
+                className="w-full flex items-center justify-center gap-3 py-3 px-4 border border-green-500 rounded-lg text-green-500 font-medium bg-white transition-all duration-300 hover:bg-green-500 hover:text-white hover:shadow-lg hover:shadow-green-400"
               >
-                <IoLogoWhatsapp className="text-green-500 w-7 h-7 sm:w-5 sm:h-5 flex-shrink-0 transition-transform duration-300 hover:scale-125" />
-                <span className="flex-1 text-center">
-                  ASK ABOUT THIS PROGRAM
-                </span>
+                <IoLogoWhatsapp className="w-7 h-7 sm:w-5 sm:h-5 flex-shrink-0 transition-transform duration-300 group-hover:scale-125" />
+                <span className="flex-1 text-center">ASK ABOUT THIS PROGRAM</span>
               </button>
             </div>
           ))}

@@ -23,21 +23,22 @@ const Certifications = () => {
           </p>
         </div>
 
-        {/* CERTIFICATION SECTION */}
+        {/* CERTIFICATION CARDS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {certifications.map((certi, index) => (
             <div
               key={index}
-              className="group bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:border-green-300 hover:shadow-xl hover:shadow-green-300 transition-all duration-300 text-center"
+              className="relative group bg-white p-8 rounded-xl shadow-md border border-gray-200 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-400 text-center"
             >
+              {/* Soft green glow overlay */}
+              <div className="absolute inset-0 -z-10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-green-200/40 via-green-200/30 to-green-200/40 blur-3xl"></div>
+
               <div className="flex justify-center">
                 <certi.icon
                   className="text-green-500 text-5xl mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
                 />
               </div>
-              <h3 className="text-gray-800 font-semibold text-lg mb-1">
-                {certi.title}
-              </h3>
+              <h3 className="text-gray-800 font-semibold text-lg mb-1">{certi.title}</h3>
               <p className="text-green-500 font-medium">{certi.count}</p>
             </div>
           ))}
